@@ -35,7 +35,7 @@
     <!-- page content -->
     <div class="right_col" role="main">
       <!-- top tiles -->
-      <div class="row tile_count">
+      <!-- <div class="row tile_count">
         <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
 
         </div>
@@ -59,7 +59,7 @@
           <div class="count_bottom" id="latency" class="count" style="color:#1ABB9C;font-size:16px;text-align:center">0ms</div>
         </div>
 
-      </div>
+      </div> -->
       <!-- /top tiles -->
 
       <div class="row">
@@ -84,6 +84,7 @@
 
             <br />
             <div class="col-md-4 col-sm-4 col-xs-12">
+
               <div class="x_panel">
                 <div class="x_title">
                   <h2>CPU</h2>
@@ -137,6 +138,60 @@
               </div>
             </div>
 
+
+
+
+            <div class="col-md-4 col-sm-4 col-xs-12">
+
+              <div class="x_panel">
+                <div class="x_title">
+                  <h2>Status</h2>
+                  <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Settings 1</a>
+                        </li>
+                        <li><a href="#">Settings 2</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                    </li>
+                  </ul>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                  <div class="row tile_count">
+
+                    <div class="col-md-12" style="text-align : left">
+                      <div style="font-size:20px;">Service Name : <span id="serviceName" style="color:#1ABB9C;font-size:18px;text-align:center;font-weight: bold"></span> </div>
+                    </div>
+
+                    <div class="col-md-12" style="text-align : left">
+                      <div style="font-size:20px;">Instance Count : <span id="instanceCount" style="color:#1ABB9C;font-size:18px;text-align:center;font-weight: bold"> 5</span> </div>
+                    </div>
+
+                    <div class="col-md-12" style="text-align : left">
+                      <div style="font-size:20px;">Previous State : <span id="previousState" style="color:#1ABB9C;font-size:18px;text-align:center;font-weight: bold"> 5</span> </div>
+                    </div>
+
+                    <div class="col-md-12" style="text-align : left">
+                      <div style="font-size:20px;">Evaluation State : <span id="evaluationState" style="color:#1ABB9C;font-size:18px;text-align:center;font-weight: bold"> 5</span> </div>
+                    </div>
+
+                    <div class="col-md-12" style="text-align : left">
+                      <div style="font-size:20px;">Latency : <span id="latency" style="color:#1ABB9C;font-size:18px;text-align:center;font-weight: bold"> 5</span> </div>
+                    </div>
+
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
 
         </div>
 

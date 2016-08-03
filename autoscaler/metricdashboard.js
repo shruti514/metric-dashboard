@@ -47,6 +47,7 @@ function FetchStatusData(callback){
     $('#serviceName').html(responseObj.serviceName)
     $('#instanceCount').html(responseObj.instanceCount)
     $('#evaluationState').html(responseObj.evaluationState)
+    $('#previousState').html(responseObj.previousState)
     $('#latency').html(responseObj.lastMetrics.latency + " ms")
 
     gaugeOpts.series[0].data[0].value = responseObj.lastMetrics.cpu.toFixed(2);

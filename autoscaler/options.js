@@ -31,8 +31,8 @@ var gaugeOpts = {
       show: true,
       lineStyle: {
         color: [
-          [0.00, 'lightgreen'],
-          [0.0, 'skyblue'],
+          [0.00, 'skyblue' ],
+          [0.0, 'lightgreen' ],
           [1, '#ff4500']
         ],
         width: 30
@@ -54,12 +54,8 @@ var gaugeOpts = {
         switch (v + '') {
           case '10':
             return 'Min';
-          case '30':
-            return 'b';
-          case '60':
-            return 'c';
           case '90':
-            return 'd';
+            return 'Max';
           default:
             return '';
         }
