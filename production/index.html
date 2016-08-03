@@ -26,63 +26,10 @@
   <link href="../build/css/custom.min.css" rel="stylesheet">
 </head>
 
-<body class="nav-md">
+<body>
 <div class="container body">
   <div class="main_container">
-    <div class="col-md-3 left_col">
-      <div class="left_col scroll-view">
-        <div class="navbar nav_title" style="border: 0;">
-          <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Autoscaler</span></a>
-        </div>
 
-        <div class="clearfix"></div>
-
-        <br />
-
-        <!-- sidebar menu -->
-        <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-          <div class="menu_section">
-            <ul class="nav side-menu">
-              <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
-                <ul class="nav child_menu">
-                  <li><a href="index.html">Dashboard</a></li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <!-- /sidebar menu -->
-
-        <!-- /menu footer buttons -->
-        <div class="sidebar-footer hidden-small">
-          <a data-toggle="tooltip" data-placement="top" title="Settings">
-            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-          </a>
-          <a data-toggle="tooltip" data-placement="top" title="FullScreen">
-            <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-          </a>
-          <a data-toggle="tooltip" data-placement="top" title="Lock">
-            <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-          </a>
-          <a data-toggle="tooltip" data-placement="top" title="Logout">
-            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-          </a>
-        </div>
-        <!-- /menu footer buttons -->
-      </div>
-    </div>
-
-    <!-- top navigation -->
-    <div class="top_nav">
-      <div class="nav_menu">
-        <nav>
-          <div class="nav toggle">
-
-          </div>
-
-        </nav>
-      </div>
-    </div>
     <!-- /top navigation -->
 
     <!-- page content -->
@@ -92,24 +39,24 @@
         <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
 
         </div>
-        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count" style="text-align : center">
           <span class="count_top" style="font-size:20px;text-align:center"> Instance Count</span>
           <div class="count_bottom" id="instanceCount" class="count" style="color:#1ABB9C;font-size:18px;text-align:center;font-weight: bold"></div>
         </div>
 
-        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-          <span class="count_top" style="font-size:20px;text-align:center">&nbsp;&nbsp;&nbsp;Service Name</span>
+        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count" style="text-align : center">
+          <span class="count_top" style="font-size:20px;text-align:center">Service Name</span>
           <div class="count_bottom" id="serviceName" class="count" style="color:#1ABB9C;font-size:18px;text-align:center;font-weight: bold"></div>
         </div>
 
-        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-          <span class="count_top" style="font-size:20px;text-align:center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;State</span>
+        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count" style="text-align : center">
+          <span class="count_top" style="font-size:20px;text-align:center">State</span>
           <div class="count_bottom" id="evaluationState" class="count" style="color:#1ABB9C;font-size:18px;text-align:center;font-weight: bold"></div>
         </div>
 
-        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-          <span class="count_top"style="font-size:20px;text-align:center"></span>
-          <div class="count_bottom" id="" class="count" style="color:#1ABB9C;font-size:16px;text-align:center"></div>
+        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count" style="text-align : center">
+          <span class="count_top"style="font-size:20px;text-align:center">Latency</span>
+          <div class="count_bottom" id="latency" class="count" style="color:#1ABB9C;font-size:16px;text-align:center">0ms</div>
         </div>
 
       </div>
@@ -128,16 +75,73 @@
             <div class="col-md-9 col-sm-9 col-xs-12">
               <div id="placeholder33" style="height: 260px; display: none" class="demo-placeholder"></div>
               <div style="width: 100%;">
-                <div id="canvas_dahs" class="demo-placeholder" style="width: 120%; height:400px;"></div>
+                <div id="canvas_dahs" class="demo-placeholder" style="width: 100%; height:300px;"></div>
               </div>
             </div>
 
             <div class="clearfix"></div>
-          </div>
+
+
+            <br />
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="x_panel">
+                <div class="x_title">
+                  <h2>CPU</h2>
+                  <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Settings 1</a>
+                        </li>
+                        <li><a href="#">Settings 2</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                    </li>
+                  </ul>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                  <div id="cpu_gauge" style="height: 370px; -webkit-tap-highlight-color: transparent; -webkit-user-select: none; position: relative; background-color: transparent;" _echarts_instance_="ec_1470256263368"><div style="position: relative; overflow: hidden; width: 331px; height: 370px; cursor: default;"><canvas width="662" height="740" data-zr-dom-id="zr_0" style="position: absolute; left: 0px; top: 0px; width: 331px; height: 370px; -webkit-user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></canvas></div><div style="position: absolute; display: none; border: 0px solid rgb(51, 51, 51); white-space: nowrap; z-index: 9999999; transition: left 0.4s cubic-bezier(0.23, 1, 0.32, 1), top 0.4s cubic-bezier(0.23, 1, 0.32, 1); border-radius: 4px; color: rgb(255, 255, 255); font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 14px; font-family: Arial, Verdana, sans-serif; line-height: 21px; padding: 5px; left: 191.688px; top: 205px; background-color: rgba(0, 0, 0, 0.498039);">Performance <br>Performance : 50%</div></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="x_panel">
+                <div class="x_title">
+                  <h2>Memory</h2>
+                  <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Settings 1</a>
+                        </li>
+                        <li><a href="#">Settings 2</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                    </li>
+                  </ul>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                  <div id="mem_gauge" style="height: 370px; -webkit-tap-highlight-color: transparent; -webkit-user-select: none; position: relative; background-color: transparent;" _echarts_instance_="ec_1470256263368"><div style="position: relative; overflow: hidden; width: 331px; height: 370px; cursor: default;"><canvas width="662" height="740" data-zr-dom-id="zr_0" style="position: absolute; left: 0px; top: 0px; width: 331px; height: 370px; -webkit-user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></canvas></div><div style="position: absolute; display: none; border: 0px solid rgb(51, 51, 51); white-space: nowrap; z-index: 9999999; transition: left 0.4s cubic-bezier(0.23, 1, 0.32, 1), top 0.4s cubic-bezier(0.23, 1, 0.32, 1); border-radius: 4px; color: rgb(255, 255, 255); font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 14px; font-family: Arial, Verdana, sans-serif; line-height: 21px; padding: 5px; left: 191.688px; top: 205px; background-color: rgba(0, 0, 0, 0.498039);">Performance <br>Performance : 50%</div></div>
+                </div>
+              </div>
+            </div>
+
+
         </div>
 
       </div>
-      <br />
+
 
       <!--<div class="row">
         <div class="col-md-4 col-sm-4 col-xs-12">
@@ -503,6 +507,9 @@
 <script src="../vendors/Chart.js/dist/Chart.min.js"></script>
 <!-- gauge.js -->
 <script src="../vendors/gauge.js/dist/gauge.min.js"></script>
+
+<script src="../vendors/echarts/dist/echarts.min.js"></script>
+    <script src="../vendors/echarts/map/js/world.js"></script>
 <!-- bootstrap-progressbar -->
 <script src="../vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
 <!-- iCheck -->
@@ -532,142 +539,14 @@
 <!-- Custom Theme Scripts -->
 <script src="../build/js/custom.min.js"></script>
 
+<script src="../autoscaler/theme.js"></script>
+<script src="../autoscaler/options.js"></script>
+<script src="../autoscaler/gauges.js"></script>
 <script src="../autoscaler/metricdashboard.js"></script>
+
 
 <!-- Flot -->
 
-<script>
-  var memoryData = [];
-  var cpuData = [];
-  var dataset;
-  var updateInterval = 1000;
-  var now = new Date().getTime();
-
-  function FetchStatusData(callback){
-    var xhr;
-    console.log('trying to fetch data');
-    xhr = createCORSRequest('GET','http://localhost:10011/v1/status/frontend-fib');
-    if (!xhr) {
-      throw new Error('CORS not supported');
-    }
-    xhr.onload = function() {
-      var responseText = xhr.responseText;
-      var responseObj = JSON.parse(responseText)
-      console.log("Response object"+responseObj.toString());
-      console.log("Response object : => "+ responseObj);
-      //if(responseObj && responseObj.lastMetrics){
-      $('#serviceName').html(responseObj.serviceName)
-      $('#instanceCount').html(responseObj.instanceCount)
-      $('#evaluationState').html(responseObj.evaluationState)
-
-      callback({"memory":[responseObj.timestamp,responseObj.lastMetrics.memory],"cpu":[responseObj.timestamp,responseObj.lastMetrics.cpu]})
-      //}
-    };
-
-    xhr.onerror = function() {
-      console.log('There was an error!');
-    };
-    xhr.send();
-  }
-
-
-  function GetData() {
-    if(memoryData.length > 10){
-      memoryData.shift();
-    }
-    if(cpuData.length >10){
-      cpuData.shift();
-    }
-
-      FetchStatusData(function(sampleData){
-        console.log("adding data");
-        memoryData.push(sampleData.memory);
-        cpuData.push(sampleData.cpu);
-      })
-  }
-
-  var options = {
-    series: {
-      lines: {
-        show: true,
-        lineWidth: 3,
-        fill: false
-      },
-      /*splines: {
-        show: true,
-        tension: 0.4,
-        lineWidth: 5,
-        fill: false
-      },
-      points: {
-        radius: 0,
-        show: true
-      },*/
-      shadowSize: 2
-    },
-    xaxis: {
-      axisLabel: "Time",
-      axisLabelUseCanvas: true,
-      tickFormatter: function (v, axis) {
-        var date = new Date(0);
-        date.setUTCSeconds(v);
-
-        var hours = date.getHours() < 10 ? "0" + date.getHours() : date.getHours();
-        var minutes = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
-        var seconds = date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds();
-        //alert('returning'+hours + ":" + minutes + ":" + seconds)
-        return hours + ":" + minutes + ":" + seconds;
-
-      },
-      axisLabelFontSizePixels: 12,
-      axisLabelFontFamily: 'Verdana, Arial, Helvetica, Tahoma, sans-serif',
-      axisLabelPadding: 5
-    },
-    yaxis: {
-      min: 0,
-      max: 100,
-      tickSize: 5,
-      tickFormatter: function (v, axis) {
-        if (v % 10 == 0) {
-          return v + "%";
-        } else {
-          return "";
-        }
-      },
-      axisLabel: "Utilization",
-      axisLabelUseCanvas: true,
-      tickColor: "rgba(51, 51, 51, 0.06)",
-      axisLabelFontSizePixels: 12,
-      axisLabelFontFamily: 'Verdana, Arial',
-      axisLabelPadding: 6
-    }
-  };
-
-  $(document).ready(function () {
-    GetData();
-
-    dataset = [{
-      label: "CPU",
-      color:"#3498DB",
-      data: cpuData
-    },{
-      label: "Memory",
-      color:"#26B99A",
-      data: memoryData
-    }];
-
-    $("#canvas_dahs").length && $.plot($("#canvas_dahs"), dataset, options);
-
-    function update() {
-      GetData();
-
-      $("#canvas_dahs").length && $.plot($("#canvas_dahs"), dataset, options)
-      setTimeout(update, updateInterval);
-    }
-
-   setInterval(update(),2000);
-  });
-</script>
 <!-- /Flot -->
 
 
