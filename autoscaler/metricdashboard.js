@@ -45,7 +45,7 @@ function FetchStatusData(callback){
     console.log("Response object : => "+ responseObj);
     //if(responseObj && responseObj.lastMetrics){
     $('#serviceName').html(responseObj.serviceName)
-    $('#instanceCount').html(responseObj.instanceCount)
+    $('#instanceCount').html(responseObj.instanceCount);
     $('#evaluationState').html(responseObj.evaluationState)
     $('#previousState').html(responseObj.previousState)
     $('#latency').html(responseObj.lastMetrics.latency + " ms")
