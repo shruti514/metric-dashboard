@@ -23,6 +23,9 @@ function createCORSRequest(method,url){
     return xhr;
 }
 
+var stable_green = "#1ABB9C";
+var changing_red = "red";
+var observing_grey = "grey";
 
 
 var memoryData = [];
@@ -43,19 +46,51 @@ function FetchStatusData(callback){
     var responseObj = JSON.parse(responseText)
     console.log("Response object"+responseObj.toString());
     console.log("Response object : => "+ responseObj);
-    //if(responseObj && responseObj.lastMetrics){
     $('#serviceName').html(responseObj.serviceName)
     $('#instanceCount').html(responseObj.instanceCount);
     $('#evaluationState').html(responseObj.evaluationState)
     $('#previousState').html(responseObj.previousState)
     $('#latency').html(responseObj.lastMetrics.latency + " ms")
+    $('#latencyThreshold').html(responseObj.desiredState.latency + " ms");
+
+
+
+    if (responseObj.evaluationState == "ScalingOut" || responseObj.evaluationState == "ScalingIn") {
+      $('#instanceCount').css("color", changing_red);
+      $("#evaluationState").css("color", changing_red);
+    } else if (responseObj.evaluationState == "Observing") {
+      $('#instanceCount').css("color", observing_grey);
+      $('#evaluationState').css("color", observing_grey);
+    } else {
+      $("#instanceCount").css("color", stable_green);
+      $("#evaluationState").css("color", stable_green);
+    }
+
+    if (responseObj.previousState == "ScalingOut" || responseObj.previousState == "ScalingIn") {
+      $("#previousState").css("color", changing_red);
+    } else if (responseObj.previousState == "Observing") {
+      $("#previousState").css("color", observing_grey);
+    } else {
+      $("#previousState").css("color", stable_green);
+    }
+
+
+    if (responseObj.lastMetrics.latency > responseObj.desiredState.latency) {
+      $("#latency").css("color", changing_red);
+    } else {
+      $("#latency").css("color", stable_green);
+    }
+
+
 
     gaugeOpts.series[0].data[0].value = responseObj.lastMetrics.cpu.toFixed(2);
+    gaugeOpts.series[0].data[0].name = "CPU";
     gaugeOpts.series[0].axisLine.lineStyle.color[0][0] = (responseObj.desiredState.cpu_min / 100).toFixed(2);
     gaugeOpts.series[0].axisLine.lineStyle.color[1][0] = (responseObj.desiredState.cpu_max / 100).toFixed(2);
     cpuGauge.setOption(gaugeOpts);
 
     gaugeOpts.series[0].data[0].value = responseObj.lastMetrics.memory.toFixed(2);
+    gaugeOpts.series[0].data[0].name = "Memory";
     gaugeOpts.series[0].axisLine.lineStyle.color[0][0] = (responseObj.desiredState.mem_min / 100).toFixed(2);
     gaugeOpts.series[0].axisLine.lineStyle.color[1][0] = (responseObj.desiredState.mem_max / 100).toFixed(2);
     memGauge.setOption(gaugeOpts);
